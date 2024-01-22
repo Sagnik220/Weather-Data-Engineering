@@ -11,6 +11,8 @@ Using Python we are creating 2 different microservices
 Now we will be making the microservice using OCI Function’s so that we can invoke them as per our requirement. 
 OCI Data Integration is used to design our pipeline where our OCI Function’s are getting invoked after that we create a schedule to run our data pipeline as per our needs.
 TECHNOLOGY / PRE-REQUISITES
+**Copy code:**
+```
 In order to enable this Solution, following technology must be available:
 •	Python
 •	Oracle Cloud Infrastructure (OCI Account) 
@@ -23,6 +25,7 @@ In order to enable this Solution, following technology must be available:
 In addition, following pre-requisites must be fulfilled:
 •	Setting/Requesting all the required IAM Policies to use these above services.
 
+```
 
 **SOLUTION OVERVIEW:**
 
