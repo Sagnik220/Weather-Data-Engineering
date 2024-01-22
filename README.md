@@ -52,76 +52,77 @@ Overall, this project combines the power of Python, OCI Functions, OCI DI, ADW, 
 The below architecture depicts how are we extracting the data from external API source & loading it into Autonomous Data Warehouse (ADW). 
 
 
+<img src="Weather/Architecture.jpg">
+
+
 SOLULTION 
 We will be using Weather API to demonstrate the whole solution
 
 Step 1: Log into your RapidAPI Account
- 
+
+  <img src="Weather/RapidAPI_0.png">
 
 Step 2: Search for your API & Test the endpoint
 Search for Weather API in RapidAPI Platform
- 
+
+
+   <img src="Weather/RapidAPI_1.png">
+
+   
+   <img src="Weather/Endpoint.png">
+
 
 Test the endpoint of the WeatherAPI to see what is the response.
  
 
 
+
 Step 3: Log into your Oracle Cloud Infrastructure Account.
+
+
+   <img src="Weather/Bucket.png">
 
  
 Step 4: Search for Object Storage Bucket.
 
+   <img src="Weather/Bucket_OCI.png">
  
 
-Step 5: Then choose a specific compartment to create your Bucket where your data will get stored after the data extraction.
+Step 5: Set up your ADW (Autonomous Data Warehouse) instance.
 
- 
+   <img src="Weather/ADW.png">
 
- 
+   <img src="Weather/ADW2.png">
 
-
-Step 6: Set up your ADW (Autonomous Data Warehouse) instance.
-
- 
+   
+   <img src="Weather/ADW3.png">
 
 
- 
+
 Download the wallet file from Database connection it will come handy later!
  
-Step 7: Setup the Function Application & Start writing your functions!
+Step 6: Setup the Function Application & Start writing your functions!
 [Note: You need to select a subnet]
  
+   <img src="Weather/Function1.png">
+   <img src="Weather/Function2.png">
 
 
 
 Execute the commands after launching the cloud shell!
 
- 
-Step 8: Write the OCI Function Code for extracting the data from the API
-[Note: This is code to extract data from External API source which in our case in Weather API]
 
-Step 9: Write the WEATHERDATA DDL in the ADW.
- 
-Step 10: Write the OCI Function Code for loading data to ADW.
-[Note: This is code to transform and load data into ADW]
+Step 8: Write the WEATHERDATA DDL in the ADW.
+
+   <img src="Weather/WeatherDDl.png">
 
 
+Step 9: Create REST Task’s to invoke the OCI Function’s & make a data pipeline!
+ 
+ 
+   <img src="Weather/Pipeline.png">
+   <img src="Weather/Weather_Data_Pipeline.png">
 
-
-Step 11: Create workspace in OCI Data Integration 
-[Note : We need to choose the same subnet as the Functions Application]
- 
-
- 
-
-
-Step 12: Create REST Task’s to invoke the OCI Function’s & make a data pipeline!
- 
- 
- 
- 
-
- 
 
  
 So as per our requirements we have created the REST Task’s for 
@@ -131,41 +132,29 @@ So as per our requirements we have created the REST Task’s for
  
 
 
-Step 13: Schedule the pipeline
+Step 10: Schedule the pipeline
+
+   <img src="Weather/Schedule.png">
+
  
 
-Step 14: Run the pipeline once to check if the get’s loaded to ADW
+Step 11: Run the pipeline once to check if the get’s loaded to ADW
  
 Voila it’s working!!
-Step 14: Now create an Oracle Analytics Instance & connect the ADW instance with it!
+
+
+Step 12: Now create an Oracle Analytics Instance & connect the ADW instance with it!
+
+ <img src="Weather/OAC_Instance.png">
+
+ 
+ <img src="Weather/OAC_Connection.png">
+
  
 [Note: Remember the wallet we have downloaded in Step 6 use that credentials to make an connection]
  
-Step 15: After establishing the connection start making your visualization’s!
-Canvas 1 Show’s the AVG Humidity by State & AVG TEMPERATURE by City
-
- 
-Canvas 1
-
-
-
-
-
-
-
-
-
-Canvas 2 Show’s the WIND_PRESSURE_MB by Region & AVG Wind_SPEED_KPH by Region
-
- 
-
-Cavas2
-
-Canvas 3 shows State vs AVG REAL_FEEL,AVG_TEMPERATURE_CELCIUS,AVG HUMIDITY
-
- 
-Canvas 3
-
+Step 13: After establishing the connection start making your visualization’s!
+ <img src="Weather/Dashboard.png">
 
 
 
